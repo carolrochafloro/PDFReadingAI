@@ -1,0 +1,6 @@
+@Minimal_Leitura_PDF_S3_HostAddress = http://localhost:5225
+
+GET {{Minimal_Leitura_PDF_S3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
