@@ -1,0 +1,1 @@
+# Minimal-Leitura-PDF-S3
