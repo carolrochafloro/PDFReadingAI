@@ -12,4 +12,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Services.csproj" />
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+    <ProjectReference Include="..\Domain\Entities.csproj" />
+    <ProjectReference Include="..\Infra.Data\Infra.Data.csproj" />
+    <ProjectReference Include="..\Infra\Infra.Queue.csproj" />
+    <ProjectReference Include="..\Worker-Evento-S3\Worker-Event.csproj" />
+  </ItemGroup>
+
 </Project>
