@@ -1,9 +1,6 @@
 ﻿-- Criação do banco de dados
 CREATE DATABASE rentals;
 
--- Conectando ao banco de dados
-\c rentals;
-
 -- Criação da tabela PropertyAddress
 CREATE TABLE PropertyAddress (
     Street VARCHAR(255),
