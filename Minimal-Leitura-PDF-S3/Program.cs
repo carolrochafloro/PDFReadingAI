@@ -17,9 +17,24 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // postar documento - enviar para S3 e disparar evento
-app.MapPost("/postdocuments", () =>
+app.MapPost("/postdocuments", async (HttpRequest request) =>
 {
+    if (request.HasFormContentType)
+    {
+        return Results.BadRequest("O conteúdo deve ser enviado como multipart/form-data");
+    }
 
+    var form = await request.ReadFormAsync();
+    var file = form.Files.GetFile("pdf");
+
+    if (file is null || file.Length == 0)
+    {
+        return Results.BadRequest("O arquivo PDF precisa ser enviado.");
+    }
+
+    // chamar service p/ armazenar
+
+    return Results.Ok("Arquivo salvo com sucesso.");
 })
 .WithName("PostDocuments")
 .WithOpenApi();
